@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VectorBridge – 6‑DoF Adapter & Tuner</title>
+  <meta name="description" content="VectorBridge lets classic 3D controllers like SpaceOrb 360, SpaceBall 4000/5000, Magellan Space Mouse Plus, and Asciiware Sphere 360 work on modern PCs with smooth HID output and a desktop tuner." />
+  <meta name="robots" content="index,follow" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="VectorBridge – 6‑DoF Adapter & Tuner" />
+  <meta property="og:description" content="Bring your vintage 3D controllers back to life. Plug‑and‑play HID with profiles and a Windows tuner app." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://your-domain.example" />
+  <meta property="og:image" content="/og-image.jpg" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="VectorBridge – 6‑DoF Adapter & Tuner" />
+  <meta name="twitter:description" content="Bring your vintage 3D controllers back to life." />
+  <meta name="twitter:image" content="/og-image.jpg" />
+  <link rel="icon" href="/favicon.ico" />
+  <!-- Tailwind via CDN for quick start -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Minimal tweaks for nicer defaults when using CDN Tailwind */
+    html { scroll-behavior: smooth; }
+    .sb { box-shadow: 0 10px 30px rgba(0,0,0,.08); }
+    .glass { backdrop-filter: blur(10px); background: rgba(255,255,255,.7); }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white/90 glass border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-2xl bg-black/90 text-white grid place-items-center font-bold">V</div>
+        <span class="font-semibold tracking-tight">VectorBridge</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a class="hover:opacity-80" href="#features">Features</a>
+        <a class="hover:opacity-80" href="#devices">Devices</a>
+        <a class="hover:opacity-80" href="#videos">Videos</a>
+        <a class="hover:opacity-80" href="#faq">FAQ</a>
+        <a class="inline-flex items-center px-3 py-1.5 rounded-xl bg-slate-900 text-white hover:bg-slate-800" href="https://www.etsy.com/shop/YourShopName?utm_source=vectorbridge_site&utm_medium=header_cta&utm_campaign=launch" target="_blank" rel="noopener">Shop on Etsy</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-gradient-to-b from-white to-slate-50">
+    <div class="max-w-6xl mx-auto px-4 pt-14 pb-10 md:pt-20 md:pb-16 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">Make vintage 3D controllers work <span class="text-slate-600">beautifully</span> on modern PCs.</h1>
+        <p class="mt-4 text-lg text-slate-700">VectorBridge is a lightweight 6‑DoF USB‑HID adapter and Windows tuner that breathes new life into SpaceOrb 360, SpaceBall 4000/5000, Magellan Space Mouse Plus, and Asciiware Sphere 360.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a class="inline-flex items-center justify-center px-5 py-3 rounded-2xl bg-slate-900 text-white hover:bg-slate-800 sb" href="https://www.etsy.com/shop/YourShopName?utm_source=vectorbridge_site&utm_medium=hero_cta&utm_campaign=launch" target="_blank" rel="noopener">Buy on Etsy</a>
+          <a class="inline-flex items-center justify-center px-5 py-3 rounded-2xl bg-white text-slate-900 hover:bg-slate-100 border border-slate-200 sb" href="#videos">Watch a demo</a>
+        </div>
+        <p class="mt-3 text-sm text-slate-500">Designed & tested on Windows 11. HID works anywhere HID joysticks are supported; tuner app currently for Windows.</p>
+      </div>
+      <div class="relative">
+        <div class="aspect-video w-full rounded-2xl bg-black/90 sb"></div>
+        <p class="sr-only">Product image placeholder. Replace with a screenshot or photo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social proof / badges -->
+  <section class="py-6">
+    <div class="max-w-6xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-sm text-slate-600">
+      <div class="p-3 bg-white rounded-xl border border-slate-200">Low‑latency HID</div>
+      <div class="p-3 bg-white rounded-xl border border-slate-200">Profiles & Curves</div>
+      <div class="p-3 bg-white rounded-xl border border-slate-200">USB‑CDC Tuner</div>
+      <div class="p-3 bg-white rounded-xl border border-slate-200">RP2040‑based</div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="py-12 md:py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold tracking-tight">Why VectorBridge</h2>
+      <p class="mt-2 text-slate-600">Smooth 6‑DoF control, modern USB compatibility, and a clean setup flow.</p>
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <div class="p-6 bg-white rounded-2xl border border-slate-200 sb">
+          <h3 class="font-semibold">True 6‑DoF HID</h3>
+          <p class="mt-2 text-slate-600">Six analog axes + 16 buttons presented as a standard USB joystick for broad app compatibility.</p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl border border-slate-200 sb">
+          <h3 class="font-semibold">Companion Tuner</h3>
+          <p class="mt-2 text-slate-600">Dial in sensitivity, dead‑zones, and response curves. Save/load profiles for different apps.</p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl border border-slate-200 sb">
+          <h3 class="font-semibold">Fast setup</h3>
+          <p class="mt-2 text-slate-600">Plug the adapter, start the tuner, pick your device profile, and go. No driver drama.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Supported Devices -->
+  <section id="devices" class="py-12 bg-white border-y border-slate-200">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold tracking-tight">Supported devices</h2>
+      <div class="mt-6 grid md:grid-cols-2 gap-6 text-slate-700">
+        <ul class="list-disc list-inside">
+          <li>Asciiware Sphere 360</li>
+          <li>SpaceOrb 360</li>
+          <li>SpaceBall 4000 / 5000 / 3003</li>
+        </ul>
+        <ul class="list-disc list-inside">
+          <li>Magellan Space Mouse Plus</li>
+          <li>…and more RS‑232 NDOF devices via profiles</li>
+        </ul>
+      </div>
+      <p class="mt-3 text-sm text-slate-500">Have another classic? <a href="#contact" class="underline">Get in touch</a>.</p>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="py-12 md:py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold tracking-tight">How it works</h2>
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <div class="p-6 bg-white rounded-2xl border border-slate-200 sb">
+          <div class="text-sm font-semibold text-slate-500">1 · Connect</div>
+          <p class="mt-2 text-slate-700">Plug your classic 3D controller into the VectorBridge adapter and connect via USB.</p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl border border-slate-200 sb">
+          <div class="text-sm font-semibold text-slate-500">2 · Tune</div>
+          <p class="mt-2 text-slate-700">Open the Windows tuner app. Choose a device profile and adjust sensitivity, dead‑zones, and curves.</p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl border border-slate-200 sb">
+          <div class="text-sm font-semibold text-slate-500">3 · Create</div>
+          <p class="mt-2 text-slate-700">Use your controller in CAD, games, or custom tools—VectorBridge shows up as a standard HID joystick.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Videos -->
+  <section id="videos" class="py-12 bg-white border-y border-slate-200">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex items-center justify-between gap-4">
+        <h2 class="text-3xl font-bold tracking-tight">See it in action</h2>
+        <a class="hidden md:inline-flex items-center px-4 py-2 rounded-xl bg-slate-900 text-white hover:bg-slate-800" href="https://youtube.com/@YourChannel?sub_confirmation=1" target="_blank" rel="noopener">Subscribe on YouTube</a>
+      </div>
+      <div class="mt-6 aspect-video w-full rounded-2xl overflow-hidden sb bg-black">
+        <!-- Replace VIDEO_ID with your actual YouTube video ID -->
+        <iframe class="w-full h-full" src="https://www.youtube.com/embed/VIDEO_ID" title="VectorBridge Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <div class="mt-4 md:hidden">
+        <a class="inline-flex items-center px-4 py-2 rounded-xl bg-slate-900 text-white hover:bg-slate-800" href="https://youtube.com/@YourChannel?sub_confirmation=1" target="_blank" rel="noopener">Subscribe on YouTube</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA strip -->
+  <section class="py-10">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="p-6 md:p-8 bg-slate-900 text-white rounded-2xl sb grid md:grid-cols-2 gap-6 items-center">
+        <div>
+          <h3 class="text-2xl font-bold">Ready to revive your SpaceOrb/SpaceBall?</h3>
+          <p class="mt-2 opacity-90">Get the adapter and start flying through models and scenes like it’s 1996—only smoother.</p>
+        </div>
+        <div class="md:text-right">
+          <a class="inline-flex items-center justify-center px-5 py-3 rounded-2xl bg-white text-slate-900 hover:bg-slate-100" href="https://www.etsy.com/shop/YourShopName?utm_source=vectorbridge_site&utm_medium=cta_strip&utm_campaign=launch" target="_blank" rel="noopener">Shop on Etsy</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-12">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold tracking-tight">FAQ</h2>
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <details class="p-5 bg-white rounded-2xl border border-slate-200">
+          <summary class="font-semibold cursor-pointer">What OS is supported?</summary>
+          <p class="mt-3 text-slate-700">Designed and tested on Windows 11. As a standard USB‑HID joystick, the core device also works on other OSes that support HID, but the companion tuner app is currently Windows‑only.</p>
+        </details>
+        <details class="p-5 bg-white rounded-2xl border border-slate-200">
+          <summary class="font-semibold cursor-pointer">Which controllers are supported?</summary>
+          <p class="mt-3 text-slate-700">Asciiware Sphere 360, SpaceOrb 360, SpaceBall 4000/5000/3003, and Magellan Space Mouse Plus—plus additional RS‑232 NDOF devices via profiles.</p>
+        </details>
+        <details class="p-5 bg-white rounded-2xl border border-slate-200">
+          <summary class="font-semibold cursor-pointer">Is any soldering required?</summary>
+          <p class="mt-3 text-slate-700">No for the finished adapter. For DIY builds, you’ll need to follow the wiring guide included with the firmware repository.</p>
+        </details>
+        <details class="p-5 bg-white rounded-2xl border border-slate-200">
+          <summary class="font-semibold cursor-pointer">Does it work with CAD and games?</summary>
+          <p class="mt-3 text-slate-700">Yes—VectorBridge presents as a standard joystick, so anything that can read HID axes/buttons can use it. App‑specific profiles in the tuner help dial things in.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / Footer -->
+  <section id="contact" class="py-12 bg-white border-y border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-6 items-center">
+      <div>
+        <h2 class="text-2xl font-bold">Questions? Collaboration? Bulk?</h2>
+        <p class="mt-2 text-slate-700">Email us and we’ll get right back to you.</p>
+      </div>
+      <div class="md:text-right">
+        <a class="inline-flex items-center px-5 py-3 rounded-2xl bg-slate-900 text-white hover:bg-slate-800" href="mailto:you@your-domain.example">you@your-domain.example</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-8">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-slate-500">
+      <div>© <span id="y"></span> VectorBridge • A Cosmic Layers project</div>
+      <div class="flex items-center gap-4">
+        <a class="hover:underline" href="https://www.etsy.com/shop/YourShopName?utm_source=vectorbridge_site&utm_medium=footer_cta&utm_campaign=launch" target="_blank" rel="noopener">Etsy</a>
+        <a class="hover:underline" href="https://youtube.com/@YourChannel" target="_blank" rel="noopener">YouTube</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Year stamp
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+  <!-- Optional: add analytics (e.g., Cloudflare Web Analytics) here -->
+</body>
+</html>
