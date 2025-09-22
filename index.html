@@ -3,36 +3,80 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>VectorBridge – 6‑DoF Adapter & Tuner</title>
-  <meta name="description" content="VectorBridge lets classic 3D controllers like SpaceOrb 360, SpaceBall 4000/5000, Magellan Space Mouse Plus, and Asciiware Sphere 360 work on modern PCs with smooth HID output and a desktop tuner." />
+  <title>VectorBridge – Revive classic 3D controllers on modern PCs</title>
+  <meta name="description" content="VectorBridge is a 6‑DoF USB‑HID adapter with a Windows Tuner and a Mouse&Keyboard Feeder. Works with SpaceOrb/SpaceBall/Magellan serial models; Sphere 360 uses the dedicated VectorBridge Sphere360." />
   <meta name="robots" content="index,follow" />
   <!-- Open Graph -->
   <meta property="og:title" content="VectorBridge – 6‑DoF Adapter & Tuner" />
-  <meta property="og:description" content="Bring your vintage 3D controllers back to life. Plug‑and‑play HID with profiles and a Windows tuner app." />
+  <meta property="og:description" content="Revive classic 3D controllers on modern PCs. Multi‑device VectorBridge and VectorBridge Sphere360. Software included." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://your-domain.example" />
   <meta property="og:image" content="/og-image.jpg" />
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="VectorBridge – 6‑DoF Adapter & Tuner" />
-  <meta name="twitter:description" content="Bring your vintage 3D controllers back to life." />
+  <meta name="twitter:description" content="Revive classic 3D controllers on modern PCs." />
   <meta name="twitter:image" content="/og-image.jpg" />
   <link rel="icon" href="/favicon.ico" />
-  <!-- Tailwind via CDN for quick start -->
+  <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
+  <!-- Tailwind via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Minimal tweaks for nicer defaults when using CDN Tailwind */
-    html { scroll-behavior: smooth; }
-    .sb { box-shadow: 0 10px 30px rgba(0,0,0,.08); }
-    .glass { backdrop-filter: blur(10px); background: rgba(255,255,255,.7); }
+    :root{
+      --vb-red:#D36063; /* Case Red */
+      --vb-blue:#223F77; /* Accent Blue */
+      --vb-space:#0B0E11; /* Space Black */
+      --vb-cyan:#7AD1FF; /* Cyan highlight */
+      --vb-card:#F5F7FB; /* light surface */
+      --vb-ink:#0F1320; /* near-black text */
+    }
+    html{scroll-behavior:smooth}
+    .sb{ box-shadow: 0 10px 30px rgba(0,0,0,.10); }
+    .glass{ backdrop-filter: blur(10px); background: rgba(255,255,255,.72); }
+    .nebula{ background: radial-gradient(120% 120% at 20% 20%, rgba(211,96,99,.35) 0%, transparent 45%),
+                         radial-gradient(120% 120% at 80% 80%, rgba(34,63,119,.35) 0%, transparent 45%),
+                         linear-gradient(135deg, #D36063 0%, #223F77 100%); }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-900">
+<body class="bg-slate-50 text-[color:var(--vb-ink)]">
   <!-- Header -->
   <header class="sticky top-0 z-50 bg-white/90 glass border-b border-slate-200">
     <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
       <a href="#" class="flex items-center gap-3">
-        <div class="w-9 h-9 rounded-2xl bg-black/90 text-white grid place-items-center font-bold">V</div>
+        <!-- Crest (SVG) -->
+        <svg width="64" height="50" viewBox="0 0 180 140" class="rounded-md sb" aria-hidden="true" role="img">
+          <defs>
+            <linearGradient id="vbNebula" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#D36063"/>
+              <stop offset="100%" stop-color="#223F77"/>
+            </linearGradient>
+            <linearGradient id="vbFlame" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#FFE08A"/>
+              <stop offset="60%" stop-color="#FF7A59"/>
+              <stop offset="100%" stop-color="#D36063"/>
+            </linearGradient>
+            <linearGradient id="vbRibbon" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#0B0E11"/>
+              <stop offset="100%" stop-color="#19202A"/>
+            </linearGradient>
+          </defs>
+          <path d="M10,20 L170,20 L170,85 Q170,120 90,130 Q10,120 10,85 Z" fill="url(#vbNebula)" stroke="#0B0E11" stroke-width="6"/>
+          <g fill="#7AD1FF" opacity="0.9">
+            <circle cx="38" cy="48" r="1.3"/><circle cx="60" cy="34" r="1"/>
+            <circle cx="118" cy="46" r="1.1"/><circle cx="142" cy="64" r="1"/>
+            <circle cx="92" cy="40" r="0.9"/>
+          </g>
+          <g transform="translate(0,-2)">
+            <path d="M92 28 C100 36 104 48 104 58 C104 60 103 64 101 66 C97 62 92 58 88 54 C86 52 86 48 86 46 C86 38 88 32 92 28 Z" fill="#ffffff" stroke="#0B0E11" stroke-width="2"/>
+            <path d="M88 54 L80 60 L90 60 Z" fill="#ffffff" stroke="#0B0E11" stroke-width="2"/>
+            <path d="M80 66 C84 70 88 72 92 74 C88 74 84 76 80 80 C80 74 80 70 80 66 Z" fill="url(#vbFlame)"/>
+            <path d="M70 84 Q90 78 110 86" stroke="#7AD1FF" stroke-opacity="0.7" stroke-width="2" fill="none"/>
+          </g>
+          <g>
+            <path d="M28,92 L152,92 L152,110 L28,110 Z" fill="url(#vbRibbon)" stroke="#0B0E11" stroke-width="2"/>
+            <text x="90" y="106" text-anchor="middle" font-size="20" fill="#ffffff" style="font-family: 'Yellowtail', cursive; font-weight:400; letter-spacing:.2px">VectorBridge</text>
+          </g>
+        </svg>
         <span class="font-semibold tracking-tight">VectorBridge</span>
       </a>
       <nav class="hidden md:flex items-center gap-6 text-sm">
@@ -40,57 +84,122 @@
         <a class="hover:opacity-80" href="#devices">Devices</a>
         <a class="hover:opacity-80" href="#videos">Videos</a>
         <a class="hover:opacity-80" href="#faq">FAQ</a>
-        <a class="inline-flex items-center px-3 py-1.5 rounded-xl bg-slate-900 text-white hover:bg-slate-800" href="https://www.etsy.com/shop/YourShopName?utm_source=vectorbridge_site&utm_medium=header_cta&utm_campaign=launch" target="_blank" rel="noopener">Shop on Etsy</a>
+        <a class="inline-flex items-center px-3 py-1.5 rounded-xl text-white hover:opacity-90" style="background:var(--vb-space)" href="https://www.etsy.com/shop/CosmicLayersStore" target="_blank" rel="noopener">Get VectorBridge</a>
       </nav>
     </div>
   </header>
 
   <!-- Hero -->
   <section class="relative overflow-hidden bg-gradient-to-b from-white to-slate-50">
-    <div class="max-w-6xl mx-auto px-4 pt-14 pb-10 md:pt-20 md:pb-16 grid md:grid-cols-2 gap-10 items-center">
-      <div>
-        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">Make vintage 3D controllers work <span class="text-slate-600">beautifully</span> on modern PCs.</h1>
-        <p class="mt-4 text-lg text-slate-700">VectorBridge is a lightweight 6‑DoF USB‑HID adapter and Windows tuner that breathes new life into SpaceOrb 360, SpaceBall 4000/5000, Magellan Space Mouse Plus, and Asciiware Sphere 360.</p>
-        <div class="mt-6 flex flex-wrap gap-3">
-          <a class="inline-flex items-center justify-center px-5 py-3 rounded-2xl bg-slate-900 text-white hover:bg-slate-800 sb" href="https://www.etsy.com/shop/YourShopName?utm_source=vectorbridge_site&utm_medium=hero_cta&utm_campaign=launch" target="_blank" rel="noopener">Buy on Etsy</a>
-          <a class="inline-flex items-center justify-center px-5 py-3 rounded-2xl bg-white text-slate-900 hover:bg-slate-100 border border-slate-200 sb" href="#videos">Watch a demo</a>
-        </div>
-        <p class="mt-3 text-sm text-slate-500">Designed & tested on Windows 11. HID works anywhere HID joysticks are supported; tuner app currently for Windows.</p>
-      </div>
-      <div class="relative">
-        <div class="aspect-video w-full rounded-2xl bg-black/90 sb"></div>
-        <p class="sr-only">Product image placeholder. Replace with a screenshot or photo.</p>
-      </div>
-    </div>
-  </section>
+    <div class="max-w-6xl mx-auto px-4 pt-12 md:pt-16">
+      <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">Revive classic 3D controllers on modern PCs.</h1>
+      <p class="mt-4 text-lg text-slate-700 max-w-4xl">Supports <strong>SpaceOrb 360 / SpaceBall Avenger</strong>; <strong>SpaceBall 2003, 3003FLX, 4000FLX, 5000</strong>; and <strong>all Magellan SpaceMouse serial models</strong> (Classic, Plus). <em>Note: Asciiware Sphere 360 requires the VectorBridge Sphere360 adapter.</em></p>
 
-  <!-- Social proof / badges -->
-  <section class="py-6">
-    <div class="max-w-6xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-sm text-slate-600">
-      <div class="p-3 bg-white rounded-xl border border-slate-200">Low‑latency HID</div>
-      <div class="p-3 bg-white rounded-xl border border-slate-200">Profiles & Curves</div>
-      <div class="p-3 bg-white rounded-xl border border-slate-200">USB‑CDC Tuner</div>
-      <div class="p-3 bg-white rounded-xl border border-slate-200">RP2040‑based</div>
+      <!-- Split product panels -->
+      <div id="get" class="mt-8 grid md:grid-cols-2 gap-6">
+        <!-- VectorBridge (multi-device) -->
+        <div class="p-5 bg-white rounded-2xl border border-slate-200 sb">
+          <div class="aspect-video rounded-xl overflow-hidden nebula relative sb">
+            <img src="hero_vectorbridge_cutout.PNG" alt="VectorBridge (multi-device) product photo" class="absolute inset-0 w-full h-full object-contain p-4" />
+          </div>
+          <h2 class="mt-4 text-xl font-bold">VectorBridge (multi‑device)</h2>
+          <p class="mt-1 text-slate-700 text-sm">Software included: <strong>VectorBridge Tuner</strong> + <strong>Mouse&Keyboard Feeder</strong>.</p>
+          <div class="mt-3 flex flex-wrap items-center gap-3">
+            <a class="inline-flex items-center justify-center px-5 py-3 rounded-2xl text-white sb" style="background:var(--vb-space)" href="https://www.etsy.com/shop/CosmicLayersStore" target="_blank" rel="noopener">Get VectorBridge</a>
+            <span class="text-xs text-slate-500">Software included</span>
+          </div>
+          <div class="mt-4 text-sm">
+            <div class="font-semibold">What’s in the box</div>
+            <ul class="list-disc list-inside text-slate-700 mt-1">
+              <li>VectorBridge adapter</li>
+              <li>USB‑A to Micro‑B cable, 1 m (for the VectorBridge’s port)</li>
+              <li>Software download link with purchase</li>
+            </ul>
+          </div>
+          <figure class="mt-3">
+            <img src="box_contents_vectorbridge.JPG" alt="VectorBridge adapter box contents: adapter and 1 m USB‑A to Micro‑B cable" class="w-full rounded-xl border border-slate-200 sb"/>
+            <figcaption class="mt-2 text-xs text-slate-500">VectorBridge adapter + USB‑A to Micro‑B cable (1 m). Software link provided with purchase.</figcaption>
+          </figure>
+        </div>
+
+        <!-- VectorBridge Sphere360 -->
+        <div class="p-5 bg-white rounded-2xl border border-slate-200 sb">
+          <div class="aspect-video rounded-xl overflow-hidden nebula relative sb">
+            <img src="hero_sphere360_cutout.PNG" alt="VectorBridge Sphere360 product photo" class="absolute inset-0 w-full h-full object-contain p-4" />
+          </div>
+          <h2 class="mt-4 text-xl font-bold">VectorBridge Sphere360</h2>
+          <p class="mt-1 text-slate-700 text-sm">For <strong>Asciiware Sphere 360</strong> only. <strong>True “Sphere” mode (switch position 0) on PC</strong> — previously not supported by other adapters. Software included: <strong>VectorBridge Tuner</strong> + <strong>Mouse&Keyboard Feeder</strong>.</p>
+          <div class="mt-3 flex flex-wrap items-center gap-3">
+            <a class="inline-flex items-center justify-center px-5 py-3 rounded-2xl text-white sb" style="background:var(--vb-space)" href="https://www.etsy.com/shop/CosmicLayersStore" target="_blank" rel="noopener">Get VectorBridge Sphere360</a>
+            <span class="text-xs text-slate-500">Software included</span>
+          </div>
+          <div class="mt-4 text-sm">
+            <div class="font-semibold">What’s in the box</div>
+            <ul class="list-disc list-inside text-slate-700 mt-1">
+              <li>VectorBridge Sphere360 adapter</li>
+              <li>USB‑A to Micro‑B cable, 1 m (for the VectorBridge’s port)</li>
+              <li>Software download link with purchase</li>
+            </ul>
+          </div>
+          <figure class="mt-3">
+            <img src="box_contents_sphere360.JPG" alt="VectorBridge Sphere360 adapter box contents: adapter and 1 m USB‑A to Micro‑B cable" class="w-full rounded-xl border border-slate-200 sb"/>
+            <figcaption class="mt-2 text-xs text-slate-500">VectorBridge Sphere360 adapter + USB‑A to Micro‑B cable (1 m). Software link provided with purchase.</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- Which one do I need? -->
+      <div class="mt-8 p-6 bg-white rounded-2xl border border-slate-200 sb">
+        <h3 class="text-lg font-bold">Which one do I need?</h3>
+        <div class="mt-4 grid md:grid-cols-2 gap-6 text-sm">
+          <div>
+            <div class="font-semibold">VectorBridge (multi‑device)</div>
+            <ul class="list-disc list-inside mt-1 text-slate-700">
+              <li>Supports SpaceOrb 360 / SpaceBall Avenger; SpaceBall <strong>2003</strong>, <strong>3003FLX</strong>, <strong>4000FLX</strong>, <strong>5000</strong>; Magellan SpaceMouse <strong>serial</strong> models (Classic, Plus)</li>
+              <li><strong>Serial models only</strong> — not for USB variants</li>
+              <li>Software included: <strong>VectorBridge Tuner</strong> + <strong>Mouse&Keyboard Feeder</strong> (Windows 10/11)</li>
+              <li>Settings save to the device (carry your tuning between PCs)</li>
+            </ul>
+          </div>
+          <div>
+            <div class="font-semibold">VectorBridge Sphere360</div>
+            <ul class="list-disc list-inside mt-1 text-slate-700">
+              <li>For <strong>Asciiware Sphere 360 only</strong> (not for SpaceOrb/SpaceBall/Magellan)</li>
+              <li><strong>True “Sphere” mode (switch position 0) on PC</strong> — previously not supported by other adapters</li>
+              <li>Software included: <strong>VectorBridge Tuner</strong> + <strong>Mouse&Keyboard Feeder</strong> (Windows 10/11)</li>
+              <li>Settings save to the device (carry your tuning between PCs)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- Features -->
   <section id="features" class="py-12 md:py-16">
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl font-bold tracking-tight">Why VectorBridge</h2>
-      <p class="mt-2 text-slate-600">Smooth 6‑DoF control, modern USB compatibility, and a clean setup flow.</p>
+      <h2 class="text-3xl font-bold tracking-tight">Features</h2>
       <div class="mt-8 grid md:grid-cols-3 gap-6">
         <div class="p-6 bg-white rounded-2xl border border-slate-200 sb">
-          <h3 class="font-semibold">True 6‑DoF HID</h3>
-          <p class="mt-2 text-slate-600">Six analog axes + 16 buttons presented as a standard USB joystick for broad app compatibility.</p>
+          <h3 class="font-semibold">True 6‑DoF Output</h3>
+          <p class="mt-2 text-slate-700">Shows up as a standard USB‑HID joystick with <strong>six analog axes</strong> and <strong>up to 16 buttons</strong> (varies by device), so it works anywhere that accepts joysticks.</p>
         </div>
         <div class="p-6 bg-white rounded-2xl border border-slate-200 sb">
-          <h3 class="font-semibold">Companion Tuner</h3>
-          <p class="mt-2 text-slate-600">Dial in sensitivity, dead‑zones, and response curves. Save/load profiles for different apps.</p>
+          <h3 class="font-semibold">Serial Classics Support</h3>
+          <p class="mt-2 text-slate-700">Works with SpaceOrb 360 / SpaceBall Avenger; SpaceBall <strong>2003</strong>, <strong>3003FLX</strong>, <strong>4000FLX</strong>, <strong>5000</strong>; and <strong>Magellan SpaceMouse serial</strong> models (Classic, Plus). <strong>Serial models only; USB variants not supported.</strong> Sphere 360 uses the separate <strong>VectorBridge Sphere360</strong>.</p>
         </div>
         <div class="p-6 bg-white rounded-2xl border border-slate-200 sb">
-          <h3 class="font-semibold">Fast setup</h3>
-          <p class="mt-2 text-slate-600">Plug the adapter, start the tuner, pick your device profile, and go. No driver drama.</p>
+          <h3 class="font-semibold">Tuner Included</h3>
+          <p class="mt-2 text-slate-700">Fine‑tune sensitivity, dead‑zones, and response curves with the <strong>VectorBridge Tuner</strong> (Windows 10/11). <strong>Get started fast with built‑in starter profiles, or tune with the fine‑grain sliders.</strong> Your settings are <strong>saved to the VectorBridge</strong>, so your setup travels with you.</p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl border border-slate-200 sb">
+          <h3 class="font-semibold">VectorBridge Mouse&Keyboard Feeder</h3>
+          <p class="mt-2 text-slate-700">Translate axes and buttons to <strong>any key or mouse function</strong>. Most shooters share the same conventions, so setup is nearly <strong>launch‑and‑play</strong>. <strong>Save, load, import/export, and share profiles</strong> (Windows 10/11).</p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl border border-slate-200 sb">
+          <h3 class="font-semibold">Fast Setup</h3>
+          <p class="mt-2 text-slate-700">Plug in VectorBridge (recognized as a standard USB‑HID joystick), launch the Tuner (Windows 10/11), pick your device profile, and refine with sliders. <strong>Your custom tuning is saved to the VectorBridge, so you’re always ready on any PC.</strong> No drivers required.</p>
         </div>
       </div>
     </div>
@@ -100,18 +209,106 @@
   <section id="devices" class="py-12 bg-white border-y border-slate-200">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-3xl font-bold tracking-tight">Supported devices</h2>
-      <div class="mt-6 grid md:grid-cols-2 gap-6 text-slate-700">
+      <p class="mt-2 text-sm text-slate-600"><strong>Serial models only</strong> — USB variants are <strong>not</nstrong> supported.</p>
+      <div class="mt-4 grid md:grid-cols-2 gap-6 text-slate-700">
         <ul class="list-disc list-inside">
-          <li>Asciiware Sphere 360</li>
           <li>SpaceOrb 360</li>
-          <li>SpaceBall 4000 / 5000 / 3003</li>
+          <li>SpaceBall Avenger</li>
+          <li>SpaceBall 2003</li>
+          <li>SpaceBall 3003FLX</li>
+          <li>SpaceBall 4000FLX <em>(serial)</em></li>
         </ul>
         <ul class="list-disc list-inside">
-          <li>Magellan Space Mouse Plus</li>
-          <li>…and more RS‑232 NDOF devices via profiles</li>
+          <li>SpaceBall 5000 <em>(serial)</em></li>
+          <li>Magellan SpaceMouse Classic <em>(serial)</em></li>
+          <li>Magellan SpaceMouse Plus <em>(serial)</em></li>
         </ul>
       </div>
-      <p class="mt-3 text-sm text-slate-500">Have another classic? <a href="#contact" class="underline">Get in touch</a>.</p>
+    </div>
+  </section>
+
+  <!-- Works with these classics (carousel) -->
+  <section id="classics" class="py-12">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex items-center justify-between">
+        <h2 class="text-3xl font-bold tracking-tight">Works with these classics</h2>
+        <div class="hidden md:flex items-center gap-2">
+          <button id="vbPrev" class="p-2 rounded-xl border border-slate-300 bg-white hover:bg-slate-100 sb" aria-controls="devicesCarousel" aria-label="Previous">&#10094;</button>
+          <button id="vbNext" class="p-2 rounded-xl border border-slate-300 bg-white hover:bg-slate-100 sb" aria-controls="devicesCarousel" aria-label="Next">&#10095;</button>
+        </div>
+      </div>
+      <div class="relative mt-4">
+        <div id="devicesCarousel" class="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-2" tabindex="0" aria-label="Supported classic devices">
+          <!-- SpaceOrb 360 -->
+          <figure data-card class="min-w-[220px] md:min-w-[260px] snap-start">
+            <div class="aspect-square rounded-2xl sb overflow-hidden bg-white">
+              <img src="spaceorb360.JPG" alt="SpaceOrb 360 connected to VectorBridge" class="w-full h-full object-cover"/>
+            </div>
+            <figcaption class="mt-2 text-sm font-medium text-slate-800">SpaceOrb 360</figcaption>
+          </figure>
+          <!-- SpaceBall Avenger -->
+          <figure data-card class="min-w-[220px] md:min-w-[260px] snap-start">
+            <div class="aspect-square rounded-2xl sb overflow-hidden bg-white">
+              <img src="spaceball_avenger.JPG" alt="SpaceBall Avenger connected to VectorBridge" class="w-full h-full object-cover"/>
+            </div>
+            <figcaption class="mt-2 text-sm font-medium text-slate-800">SpaceBall Avenger</figcaption>
+          </figure>
+          <!-- SpaceBall 2003 -->
+          <figure data-card class="min-w-[220px] md:min-w-[260px] snap-start">
+            <div class="aspect-square rounded-2xl sb overflow-hidden bg-white">
+              <img src="spabeball_2003.JPG" alt="SpaceBall 2003 connected to VectorBridge" class="w-full h-full object-cover"/>
+            </div>
+            <figcaption class="mt-2 text-sm font-medium text-slate-800">SpaceBall 2003</figcaption>
+          </figure>
+          <!-- SpaceBall 3003FLX -->
+          <figure data-card class="min-w-[220px] md:min-w-[260px] snap-start">
+            <div class="aspect-square rounded-2xl sb overflow-hidden bg-white">
+              <img src="spaceball_3003flx.JPG" alt="SpaceBall 3003FLX connected to VectorBridge" class="w-full h-full object-cover"/>
+            </div>
+            <figcaption class="mt-2 text-sm font-medium text-slate-800">SpaceBall 3003FLX</figcaption>
+          </figure>
+          <!-- SpaceBall 4000FLX (serial) -->
+          <figure data-card class="min-w-[220px] md:min-w-[260px] snap-start">
+            <div class="aspect-square rounded-2xl sb overflow-hidden bg-white">
+              <img src="spaceball_4000flx.JPG" alt="SpaceBall 4000FLX (serial) connected to VectorBridge" class="w-full h-full object-cover"/>
+            </div>
+            <figcaption class="mt-2 text-sm font-medium text-slate-800">SpaceBall 4000FLX (serial)</figcaption>
+          </figure>
+          <!-- SpaceBall 5000 (serial) -->
+          <figure data-card class="min-w-[220px] md:min-w-[260px] snap-start">
+            <div class="aspect-square rounded-2xl sb overflow-hidden bg-white">
+              <img src="spaceball_5000.JPG" alt="SpaceBall 5000 (serial) connected to VectorBridge" class="w-full h-full object-cover"/>
+            </div>
+            <figcaption class="mt-2 text-sm font-medium text-slate-800">SpaceBall 5000 (serial)</figcaption>
+          </figure>
+          <!-- Magellan SpaceMouse Classic (serial) -->
+          <figure data-card class="min-w-[220px] md:min-w-[260px] snap-start">
+            <div class="aspect-square rounded-2xl sb overflow-hidden bg-white">
+              <img src="magellan_classic.JPG" alt="Magellan SpaceMouse Classic (serial) connected to VectorBridge" class="w-full h-full object-cover"/>
+            </div>
+            <figcaption class="mt-2 text-sm font-medium text-slate-800">Magellan SpaceMouse Classic (serial)</figcaption>
+          </figure>
+          <!-- Magellan SpaceMouse Plus (serial) -->
+          <figure data-card class="min-w-[220px] md:min-w-[260px] snap-start">
+            <div class="aspect-square rounded-2xl sb overflow-hidden bg-white">
+              <img src="magellan_plus.JPG" alt="Magellan SpaceMouse Plus (serial) connected to VectorBridge" class="w-full h-full object-cover"/>
+            </div>
+            <figcaption class="mt-2 text-sm font-medium text-slate-800">Magellan SpaceMouse Plus (serial)</figcaption>
+          </figure>
+          <!-- Sphere 360 (note: requires Sphere360 adapter) -->
+          <figure data-card class="min-w-[220px] md:min-w-[260px] snap-start">
+            <div class="aspect-square rounded-2xl sb overflow-hidden bg-white relative">
+              <img src="sphere360.JPG" alt="Asciiware Sphere 360 connected to VectorBridge Sphere360" class="w-full h-full object-cover"/>
+              <span class="absolute bottom-2 left-2 text-[11px] bg-black/70 text-white px-2 py-0.5 rounded">Requires VectorBridge Sphere360</span>
+            </div>
+            <figcaption class="mt-2 text-sm font-medium text-slate-800">Asciiware Sphere 360</figcaption>
+          </figure>
+        </div>
+        <div class="md:hidden flex justify-end gap-2 mt-3">
+          <button id="vbPrevM" class="px-3 py-2 rounded-xl border border-slate-300 bg-white hover:bg-slate-100 sb" aria-label="Previous">&#10094;</button>
+          <button id="vbNextM" class="px-3 py-2 rounded-xl border border-slate-300 bg-white hover:bg-slate-100 sb" aria-label="Next">&#10095;</button>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -126,11 +323,11 @@
         </div>
         <div class="p-6 bg-white rounded-2xl border border-slate-200 sb">
           <div class="text-sm font-semibold text-slate-500">2 · Tune</div>
-          <p class="mt-2 text-slate-700">Open the Windows tuner app. Choose a device profile and adjust sensitivity, dead‑zones, and curves.</p>
+          <p class="mt-2 text-slate-700">Open the VectorBridge Tuner app. Choose a device profile and adjust sensitivity, dead‑zones, and curves.</p>
         </div>
         <div class="p-6 bg-white rounded-2xl border border-slate-200 sb">
-          <div class="text-sm font-semibold text-slate-500">3 · Create</div>
-          <p class="mt-2 text-slate-700">Use your controller in CAD, games, or custom tools—VectorBridge shows up as a standard HID joystick.</p>
+          <div class="text-sm font-semibold text-slate-500">3 · Play</div>
+          <p class="mt-2 text-slate-700">Use your controller in games and custom tools—VectorBridge shows up as a standard HID joystick.</p>
         </div>
       </div>
     </div>
@@ -141,14 +338,13 @@
     <div class="max-w-6xl mx-auto px-4">
       <div class="flex items-center justify-between gap-4">
         <h2 class="text-3xl font-bold tracking-tight">See it in action</h2>
-        <a class="hidden md:inline-flex items-center px-4 py-2 rounded-xl bg-slate-900 text-white hover:bg-slate-800" href="https://youtube.com/@YourChannel?sub_confirmation=1" target="_blank" rel="noopener">Subscribe on YouTube</a>
+        <a class="hidden md:inline-flex items-center px-4 py-2 rounded-xl text-white" style="background:var(--vb-space)" href="https://youtube.com/@CosmicLayers?sub_confirmation=1" target="_blank" rel="noopener">Subscribe on YouTube</a>
       </div>
       <div class="mt-6 aspect-video w-full rounded-2xl overflow-hidden sb bg-black">
-        <!-- Replace VIDEO_ID with your actual YouTube video ID -->
         <iframe class="w-full h-full" src="https://www.youtube.com/embed/VIDEO_ID" title="VectorBridge Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
       <div class="mt-4 md:hidden">
-        <a class="inline-flex items-center px-4 py-2 rounded-xl bg-slate-900 text-white hover:bg-slate-800" href="https://youtube.com/@YourChannel?sub_confirmation=1" target="_blank" rel="noopener">Subscribe on YouTube</a>
+        <a class="inline-flex items-center px-4 py-2 rounded-xl text-white" style="background:var(--vb-space)" href="https://youtube.com/@CosmicLayers?sub_confirmation=1" target="_blank" rel="noopener">Subscribe on YouTube</a>
       </div>
     </div>
   </section>
@@ -156,13 +352,13 @@
   <!-- CTA strip -->
   <section class="py-10">
     <div class="max-w-6xl mx-auto px-4">
-      <div class="p-6 md:p-8 bg-slate-900 text-white rounded-2xl sb grid md:grid-cols-2 gap-6 items-center">
+      <div class="p-6 md:p-8 text-white rounded-2xl sb grid md:grid-cols-2 gap-6 items-center" style="background:var(--vb-space)">
         <div>
-          <h3 class="text-2xl font-bold">Ready to revive your SpaceOrb/SpaceBall?</h3>
-          <p class="mt-2 opacity-90">Get the adapter and start flying through models and scenes like it’s 1996—only smoother.</p>
+          <h3 class="text-2xl font-bold">Ready to bring your classics back?</h3>
+          <p class="mt-2 opacity-90">Get the adapter and start flying through scenes like it’s 1996—only smoother.</p>
         </div>
         <div class="md:text-right">
-          <a class="inline-flex items-center justify-center px-5 py-3 rounded-2xl bg-white text-slate-900 hover:bg-slate-100" href="https://www.etsy.com/shop/YourShopName?utm_source=vectorbridge_site&utm_medium=cta_strip&utm_campaign=launch" target="_blank" rel="noopener">Shop on Etsy</a>
+          <a class="inline-flex items-center justify-center px-5 py-3 rounded-2xl bg-white text-[color:var(--vb-space)] hover:bg-slate-100" href="https://www.etsy.com/shop/CosmicLayersStore" target="_blank" rel="noopener">Get VectorBridge</a>
         </div>
       </div>
     </div>
@@ -175,19 +371,27 @@
       <div class="mt-6 grid md:grid-cols-2 gap-6">
         <details class="p-5 bg-white rounded-2xl border border-slate-200">
           <summary class="font-semibold cursor-pointer">What OS is supported?</summary>
-          <p class="mt-3 text-slate-700">Designed and tested on Windows 11. As a standard USB‑HID joystick, the core device also works on other OSes that support HID, but the companion tuner app is currently Windows‑only.</p>
+          <p class="mt-3 text-slate-700">Windows 10 and Windows 11. VectorBridge appears as a standard USB‑HID joystick; the companion apps (Tuner and Mouse&Keyboard Feeder) are Windows‑only.</p>
         </details>
         <details class="p-5 bg-white rounded-2xl border border-slate-200">
-          <summary class="font-semibold cursor-pointer">Which controllers are supported?</summary>
-          <p class="mt-3 text-slate-700">Asciiware Sphere 360, SpaceOrb 360, SpaceBall 4000/5000/3003, and Magellan Space Mouse Plus—plus additional RS‑232 NDOF devices via profiles.</p>
+          <summary class="font-semibold cursor-pointer">Do I need drivers?</summary>
+          <p class="mt-3 text-slate-700">No drivers required. Plug in the adapter, launch the Tuner, select your device, and go.</p>
         </details>
         <details class="p-5 bg-white rounded-2xl border border-slate-200">
-          <summary class="font-semibold cursor-pointer">Is any soldering required?</summary>
-          <p class="mt-3 text-slate-700">No for the finished adapter. For DIY builds, you’ll need to follow the wiring guide included with the firmware repository.</p>
+          <summary class="font-semibold cursor-pointer">What’s included?</summary>
+          <p class="mt-3 text-slate-700">VectorBridge adapter, <em>USB‑A to Micro‑B cable (1 m, for the VectorBridge’s port)</em>, and a software download link with purchase.</p>
         </details>
         <details class="p-5 bg-white rounded-2xl border border-slate-200">
-          <summary class="font-semibold cursor-pointer">Does it work with CAD and games?</summary>
-          <p class="mt-3 text-slate-700">Yes—VectorBridge presents as a standard joystick, so anything that can read HID axes/buttons can use it. App‑specific profiles in the tuner help dial things in.</p>
+          <summary class="font-semibold cursor-pointer">Shipping</summary>
+          <p class="mt-3 text-slate-700">United States only. Ships via USPS in 1–3 business days.</p>
+        </details>
+        <details class="p-5 bg-white rounded-2xl border border-slate-200">
+          <summary class="font-semibold cursor-pointer">Warranty & returns</summary>
+          <p class="mt-3 text-slate-700">One‑year hardware warranty. 30‑day returns handled through Etsy.</p>
+        </details>
+        <details class="p-5 bg-white rounded-2xl border border-slate-200">
+          <summary class="font-semibold cursor-pointer">Support</summary>
+          <p class="mt-3 text-slate-700">Questions? Email <a class="underline" href="mailto:cosmiclayersllc@gmail.com">cosmiclayersllc@gmail.com</a>. We typically reply within 1–2 business days.</p>
         </details>
       </div>
     </div>
@@ -201,7 +405,7 @@
         <p class="mt-2 text-slate-700">Email us and we’ll get right back to you.</p>
       </div>
       <div class="md:text-right">
-        <a class="inline-flex items-center px-5 py-3 rounded-2xl bg-slate-900 text-white hover:bg-slate-800" href="mailto:you@your-domain.example">you@your-domain.example</a>
+        <a class="inline-flex items-center px-5 py-3 rounded-2xl text-white" style="background:var(--vb-space)" href="mailto:cosmiclayersllc@gmail.com">cosmiclayersllc@gmail.com</a>
       </div>
     </div>
   </section>
@@ -210,16 +414,35 @@
     <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-slate-500">
       <div>© <span id="y"></span> VectorBridge • A Cosmic Layers project</div>
       <div class="flex items-center gap-4">
-        <a class="hover:underline" href="https://www.etsy.com/shop/YourShopName?utm_source=vectorbridge_site&utm_medium=footer_cta&utm_campaign=launch" target="_blank" rel="noopener">Etsy</a>
-        <a class="hover:underline" href="https://youtube.com/@YourChannel" target="_blank" rel="noopener">YouTube</a>
+        <a class="hover:underline" href="https://www.etsy.com/shop/CosmicLayersStore" target="_blank" rel="noopener">Get VectorBridge</a>
+        <a class="hover:underline" href="https://youtube.com/@CosmicLayers" target="_blank" rel="noopener">YouTube</a>
       </div>
     </div>
   </footer>
 
+  <!-- Carousel controls (no external deps) -->
   <script>
-    // Year stamp
     document.getElementById('y').textContent = new Date().getFullYear();
+    (function(){
+      const carousel = document.getElementById('devicesCarousel');
+      if(!carousel) return;
+      const prev = document.getElementById('vbPrev');
+      const next = document.getElementById('vbNext');
+      const prevM = document.getElementById('vbPrevM');
+      const nextM = document.getElementById('vbNextM');
+      function stepSize(){
+        const card = carousel.querySelector('[data-card]');
+        return card ? (card.getBoundingClientRect().width + 16) : Math.max(240, Math.floor(carousel.clientWidth * 0.9));
+      }
+      function scrollByDir(dir){
+        carousel.scrollBy({left: (dir === 'next' ? 1 : -1) * stepSize(), behavior: 'smooth'});
+      }
+      [prev, next, prevM, nextM].forEach(btn => btn && btn.addEventListener('click', () => scrollByDir(btn.id.includes('Next') ? 'next' : 'prev')));
+      carousel.addEventListener('keydown', (e) => {
+        if(e.key === 'ArrowRight') scrollByDir('next');
+        if(e.key === 'ArrowLeft') scrollByDir('prev');
+      });
+    })();
   </script>
-  <!-- Optional: add analytics (e.g., Cloudflare Web Analytics) here -->
 </body>
 </html>
