@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VectorBridge Software – Tuner & Mouse&Keyboard Feeder</title>
+  <meta name="description" content="See the value of VectorBridge software: the Windows Tuner that writes settings to device NVM and the Mouse&Keyboard Feeder for near launch‑and‑play FPS support." />
+  <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{ --vb-red:#D36063; --vb-blue:#223F77; --vb-space:#0B0E11; --vb-cyan:#7AD1FF; --vb-ink:#0F1320 }
+    .sb{ box-shadow: 0 10px 30px rgba(0,0,0,.10); }
+    .nebula{ background: radial-gradient(120% 120% at 20% 20%, rgba(211,96,99,.35) 0%, transparent 45%),
+                         radial-gradient(120% 120% at 80% 80%, rgba(34,63,119,.35) 0%, transparent 45%),
+                         linear-gradient(135deg, #D36063 0%, #223F77 100%); }
+  </style>
+</head>
+<body class="bg-slate-50 text-[color:var(--vb-ink)]">
+  <header class="sticky top-0 z-40 bg-white/85 backdrop-blur border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <svg width="48" height="36" viewBox="0 0 180 140" aria-hidden="true" class="rounded sb">
+          <defs>
+            <linearGradient id="vbNebula" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#D36063"/>
+              <stop offset="100%" stop-color="#223F77"/>
+            </linearGradient>
+          </defs>
+          <path d="M10,20 L170,20 L170,85 Q170,120 90,130 Q10,120 10,85 Z" fill="url(#vbNebula)" stroke="#0B0E11" stroke-width="6"/>
+          <text x="90" y="106" text-anchor="middle" font-size="20" fill="#ffffff" style="font-family: 'Yellowtail', cursive;">VectorBridge</text>
+        </svg>
+        <span class="font-semibold tracking-tight">Software</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="index.html#features" class="hover:opacity-80">Features</a>
+        <a href="index.html#devices" class="hover:opacity-80">Devices</a>
+        <a href="index.html#faq" class="hover:opacity-80">FAQ</a>
+        <a class="inline-flex items-center px-3 py-1.5 rounded-xl text-white hover:opacity-90" style="background:var(--vb-space)" href="https://www.etsy.com/shop/CosmicLayersStore" target="_blank" rel="noopener">Get VectorBridge</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page hero -->
+    <section class="bg-white">
+      <div class="max-w-6xl mx-auto px-4 py-10">
+        <h1 class="text-4xl font-extrabold tracking-tight">VectorBridge Software</h1>
+        <p class="mt-3 text-lg text-slate-700 max-w-3xl">Two included Windows apps show the real value of VectorBridge: the <strong>Tuner</strong> that writes your settings to the adapter’s NVM, and the <strong>Mouse&Keyboard Feeder</strong> that makes classic 6‑DoF controllers feel at home in modern games.</p>
+      </div>
+    </section>
+
+    <!-- Tabs -->
+    <section class="py-2">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="inline-flex rounded-xl border border-slate-200 bg-white sb overflow-hidden">
+          <button id="tabTuner" class="px-4 py-2 text-sm font-medium bg-[color:var(--vb-space)] text-white">Tuner</button>
+          <button id="tabFeeder" class="px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50">Mouse&Keyboard Feeder</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tuner panel -->
+    <section id="panelTuner" class="py-8">
+      <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-5 gap-8 items-start">
+        <div class="md:col-span-3">
+          <div class="rounded-2xl border border-slate-200 bg-white sb overflow-hidden">
+            <div class="px-4 py-3 border-b border-slate-200 bg-slate-50 text-sm font-medium">Tuner — Device Selection</div>
+            <!-- HERO screenshot placeholder -->
+            <img src="tuner_device_selection.png" alt="VectorBridge Tuner showing device selection with SpaceOrb 360 chosen" class="w-full h-auto" />
+          </div>
+          <div class="mt-4 grid md:grid-cols-3 gap-4">
+            <figure class="rounded-xl border border-slate-200 bg-white sb overflow-hidden">
+              <img src="tuner_sliders.png" alt="Sensitivity, dead‑zone, and curve sliders" class="w-full h-auto" />
+              <figcaption class="px-3 py-2 text-xs text-slate-600">Fine‑grain sliders for sensitivity, dead‑zones, response curves</figcaption>
+            </figure>
+            <figure class="rounded-xl border border-slate-200 bg-white sb overflow-hidden">
+              <img src="tuner_write_to_device.png" alt="Write settings to device (NVM)" class="w-full h-auto" />
+              <figcaption class="px-3 py-2 text-xs text-slate-600">Writes settings to VectorBridge NVM (carry your tuning to any PC)</figcaption>
+            </figure>
+            <figure class="rounded-xl border border-slate-200 bg-white sb overflow-hidden">
+              <img src="tuner_starter_profiles.png" alt="Starter profiles dropdown" class="w-full h-auto" />
+              <figcaption class="px-3 py-2 text-xs text-slate-600">Built‑in starter profiles to get going fast</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="md:col-span-2">
+          <h2 class="text-2xl font-bold">Tuner highlights</h2>
+          <ul class="mt-3 space-y-2 text-slate-700">
+            <li>Choose from supported devices (e.g., <strong>SpaceOrb 360</strong>, SpaceBall series, Magellan Classic/Plus)</li>
+            <li>Adjust <strong>sensitivity</strong>, <strong>dead‑zones</strong>, and <strong>response curves</strong></li>
+            <li><strong>Writes to device NVM</strong> — settings travel with your VectorBridge</li>
+            <li><strong>Starter profiles</strong> let you begin quickly; refine with sliders</li>
+            <li>Windows <strong>10/11</strong></li>
+          </ul>
+          <div class="mt-6 p-4 rounded-xl bg-white border border-slate-200 sb text-sm text-slate-700">
+            <div class="font-semibold mb-1">Screenshot guidance</div>
+            <ol class="list-decimal list-inside space-y-1">
+              <li><strong>tuner_device_selection.png</strong> — single window, dropdown visible with <em>SpaceOrb 360</em> selected; keep other UI minimal.</li>
+              <li><strong>tuner_sliders.png</strong> — show sliders for sensitivity/dead‑zone/curves (no device dropdown needed).</li>
+              <li><strong>tuner_write_to_device.png</strong> — show the control/status for writing to NVM.</li>
+              <li><strong>tuner_starter_profiles.png</strong> — show the starter profiles list.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feeder panel -->
+    <section id="panelFeeder" class="py-8 hidden">
+      <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-5 gap-8 items-start">
+        <div class="md:col-span-3">
+          <div class="rounded-2xl border border-slate-200 bg-white sb overflow-hidden">
+            <div class="px-4 py-3 border-b border-slate-200 bg-slate-50 text-sm font-medium">Mouse&Keyboard Feeder — Launch and Play</div>
+            <!-- HERO screenshot placeholder -->
+            <img src="feeder_main.png" alt="Feeder mapping axes/buttons to keys and mouse functions" class="w-full h-auto" />
+          </div>
+          <div class="mt-4 grid md:grid-cols-3 gap-4">
+            <figure class="rounded-xl border border-slate-200 bg-white sb overflow-hidden">
+              <img src="feeder_mapping.png" alt="Mapping UI showing axes/buttons mapped to keys/mouse" class="w-full h-auto" />
+              <figcaption class="px-3 py-2 text-xs text-slate-600">Map any axis/button to any key or mouse function</figcaption>
+            </figure>
+            <figure class="rounded-xl border border-slate-200 bg-white sb overflow-hidden">
+              <img src="feeder_profiles.png" alt="Profile save/load/import/export" class="w-full h-auto" />
+              <figcaption class="px-3 py-2 text-xs text-slate-600">Save, load, <strong>import/export</strong> — share configs</figcaption>
+            </figure>
+            <figure class="rounded-xl border border-slate-200 bg-white sb overflow-hidden">
+              <img src="feeder_mouselook.png" alt="Mouse look tuning for FPS" class="w-full h-auto" />
+              <figcaption class="px-3 py-2 text-xs text-slate-600">Optimized <strong>mouse look</strong> for FPS games</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="md:col-span-2">
+          <h2 class="text-2xl font-bold">Feeder highlights</h2>
+          <ul class="mt-3 space-y-2 text-slate-700">
+            <li><strong>Play virtually any FPS</strong> — maps to standard mouse/keyboard conventions</li>
+            <li>Map axes and buttons to <strong>any key or mouse function</strong></li>
+            <li><strong>Save / Load / Import / Export</strong> profiles; easy sharing</li>
+            <li>Windows <strong>10/11</strong></li>
+          </ul>
+          <div class="mt-6 p-4 rounded-xl bg-white border border-slate-200 sb text-sm text-slate-700">
+            <div class="font-semibold mb-1">Screenshot guidance</div>
+            <ol class="list-decimal list-inside space-y-1">
+              <li><strong>feeder_main.png</strong> — main window showing mappings overview.</li>
+              <li><strong>feeder_mapping.png</strong> — detailed mapping editor (axis/button → key/mouse).</li>
+              <li><strong>feeder_profiles.png</strong> — profiles area demonstrating import/export.</li>
+              <li><strong>feeder_mouselook.png</strong> — show mouse‑look related settings for FPS.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-10">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="p-6 md:p-8 text-white rounded-2xl sb grid md:grid-cols-2 gap-6 items-center" style="background:var(--vb-space)">
+          <div>
+            <h3 class="text-2xl font-bold">Included with every VectorBridge</h3>
+            <p class="mt-2 opacity-90">Tuner and Mouse&Keyboard Feeder are part of the package — no extra purchase required.</p>
+          </div>
+          <div class="md:text-right">
+            <a class="inline-flex items-center justify-center px-5 py-3 rounded-2xl bg-white text-[color:var(--vb-space)] hover:bg-slate-100" href="https://www.etsy.com/shop/CosmicLayersStore" target="_blank" rel="noopener">Get VectorBridge</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Simple tabs
+    const tabTuner = document.getElementById('tabTuner');
+    const tabFeeder = document.getElementById('tabFeeder');
+    const panelTuner = document.getElementById('panelTuner');
+    const panelFeeder = document.getElementById('panelFeeder');
+    function show(which){
+      if(which==='tuner'){
+        tabTuner.classList.add('bg-[color:var(--vb-space)]','text-white');
+        tabFeeder.classList.remove('bg-[color:var(--vb-space)]','text-white');
+        panelTuner.classList.remove('hidden'); panelFeeder.classList.add('hidden');
+      }else{
+        tabFeeder.classList.add('bg-[color:var(--vb-space)]','text-white');
+        tabTuner.classList.remove('bg-[color:var(--vb-space)]','text-white');
+        panelFeeder.classList.remove('hidden'); panelTuner.classList.add('hidden');
+      }
+    }
+    tabTuner.addEventListener('click',()=>show('tuner'));
+    tabFeeder.addEventListener('click',()=>show('feeder'));
+  </script>
+</body>
+</html>
