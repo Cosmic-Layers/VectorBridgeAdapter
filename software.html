@@ -19,24 +19,19 @@
   <header class="sticky top-0 z-40 bg-white/85 backdrop-blur border-b border-slate-200">
     <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-3">
-        <svg width="48" height="36" viewBox="0 0 180 140" aria-hidden="true" class="rounded sb">
-          <defs>
-            <linearGradient id="vbNebula" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#D36063"/>
-              <stop offset="100%" stop-color="#223F77"/>
-            </linearGradient>
-          </defs>
-          <path d="M10,20 L170,20 L170,85 Q170,120 90,130 Q10,120 10,85 Z" fill="url(#vbNebula)" stroke="#0B0E11" stroke-width="6"/>
-          <text x="90" y="106" text-anchor="middle" font-size="20" fill="#ffffff" style="font-family: 'Yellowtail', cursive;">VectorBridge</text>
-        </svg>
-        <span class="font-semibold tracking-tight">Software</span>
+        <img src="sphere360_icon.png" width="56" height="56" alt="VectorBridge crest" class="rounded sb"/>
+        <span class="font-semibold tracking-tight">VectorBridge</span>
       </a>
+      
       <nav class="hidden md:flex items-center gap-6 text-sm">
         <a href="index.html#features" class="hover:opacity-80">Features</a>
         <a href="index.html#devices" class="hover:opacity-80">Devices</a>
+        <a href="index.html#videos" class="hover:opacity-80">Videos</a>
         <a href="index.html#faq" class="hover:opacity-80">FAQ</a>
+        <a href="software.html" class="hover:opacity-80">Software</a>
         <a class="inline-flex items-center px-3 py-1.5 rounded-xl text-white hover:opacity-90" style="background:var(--vb-space)" href="https://www.etsy.com/shop/CosmicLayersStore" target="_blank" rel="noopener">Get VectorBridge</a>
       </nav>
+
     </div>
   </header>
 
@@ -60,95 +55,113 @@
     </section>
 
     <!-- Tuner panel -->
+    
     <section id="panelTuner" class="py-8">
       <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-5 gap-8 items-start">
         <div class="md:col-span-3">
           <div class="rounded-2xl border border-slate-200 bg-white sb overflow-hidden">
-            <div class="px-4 py-3 border-b border-slate-200 bg-slate-50 text-sm font-medium">Tuner — Device Selection</div>
-            <!-- HERO screenshot placeholder -->
-            <img src="tuner_device_selection.png" alt="VectorBridge Tuner showing device selection with SpaceOrb 360 chosen" class="w-full h-auto" />
+            <div id="panelTunerHeader" class="px-4 py-3 border-b border-slate-200 bg-slate-50 text-sm font-medium">Tuner — Device selection (SpaceOrb 360)</div>
+            <img id="panelTunerHero" src="tuner_device_selection.png" alt="VectorBridge Tuner showing device selection with SpaceOrb 360 chosen" class="w-full h-auto" />
           </div>
-          <div class="mt-4 grid md:grid-cols-3 gap-4">
-            <figure class="rounded-xl border border-slate-200 bg-white sb overflow-hidden">
-              <img src="tuner_sliders.png" alt="Sensitivity, dead‑zone, and curve sliders" class="w-full h-auto" />
-              <figcaption class="px-3 py-2 text-xs text-slate-600">Fine‑grain sliders for sensitivity, dead‑zones, response curves</figcaption>
-            </figure>
-            <figure class="rounded-xl border border-slate-200 bg-white sb overflow-hidden">
-              <img src="tuner_write_to_device.png" alt="Write settings to device (NVM)" class="w-full h-auto" />
-              <figcaption class="px-3 py-2 text-xs text-slate-600">Writes settings to VectorBridge NVM (carry your tuning to any PC)</figcaption>
-            </figure>
-            <figure class="rounded-xl border border-slate-200 bg-white sb overflow-hidden">
-              <img src="tuner_starter_profiles.png" alt="Starter profiles dropdown" class="w-full h-auto" />
-              <figcaption class="px-3 py-2 text-xs text-slate-600">Built‑in starter profiles to get going fast</figcaption>
-            </figure>
+          <div class="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4" role="list">
+            
+            <button class="group rounded-xl overflow-hidden border border-slate-200 bg-white sb focus:outline-none focus:ring-2 focus:ring-slate-400"
+                    data-gallery="panelTuner" data-src="tuner_device_selection.png" data-title="Device selection (SpaceOrb 360)" data-alt="VectorBridge Tuner showing device selection with SpaceOrb 360 chosen" aria-pressed="true" tabindex="0">
+              <img src="tuner_device_selection.png" alt="VectorBridge Tuner showing device selection with SpaceOrb 360 chosen" class="w-full h-auto pointer-events-none" />
+              <div class="px-3 py-2 text-xs text-slate-600 text-left">Device selection (SpaceOrb 360)</div>
+            </button>
+        
+
+            <button class="group rounded-xl overflow-hidden border border-slate-200 bg-white sb focus:outline-none focus:ring-2 focus:ring-slate-400"
+                    data-gallery="panelTuner" data-src="tuner_sliders.png" data-title="Sensitivity, dead-zones, curves" data-alt="VectorBridge Tuner sliders for sensitivity, dead-zone, response curve" aria-pressed="false" tabindex="0">
+              <img src="tuner_sliders.png" alt="VectorBridge Tuner sliders for sensitivity, dead-zone, response curve" class="w-full h-auto pointer-events-none" />
+              <div class="px-3 py-2 text-xs text-slate-600 text-left">Sensitivity, dead-zones, curves</div>
+            </button>
+        
+
+            <button class="group rounded-xl overflow-hidden border border-slate-200 bg-white sb focus:outline-none focus:ring-2 focus:ring-slate-400"
+                    data-gallery="panelTuner" data-src="tuner_write_to_device.png" data-title="Write to VectorBridge’s onboard storage" data-alt="VectorBridge Tuner control to write settings to onboard storage" aria-pressed="false" tabindex="0">
+              <img src="tuner_write_to_device.png" alt="VectorBridge Tuner control to write settings to onboard storage" class="w-full h-auto pointer-events-none" />
+              <div class="px-3 py-2 text-xs text-slate-600 text-left">Write to VectorBridge’s onboard storage</div>
+            </button>
+        
+
+            <button class="group rounded-xl overflow-hidden border border-slate-200 bg-white sb focus:outline-none focus:ring-2 focus:ring-slate-400"
+                    data-gallery="panelTuner" data-src="tuner_starter_profiles.png" data-title="Built-in starter profiles" data-alt="VectorBridge Tuner starter profiles dropdown" aria-pressed="false" tabindex="0">
+              <img src="tuner_starter_profiles.png" alt="VectorBridge Tuner starter profiles dropdown" class="w-full h-auto pointer-events-none" />
+              <div class="px-3 py-2 text-xs text-slate-600 text-left">Built-in starter profiles</div>
+            </button>
+        
           </div>
         </div>
         <div class="md:col-span-2">
           <h2 class="text-2xl font-bold">Tuner highlights</h2>
           <ul class="mt-3 space-y-2 text-slate-700">
+            
             <li>Choose from supported devices (e.g., <strong>SpaceOrb 360</strong>, SpaceBall series, Magellan Classic/Plus)</li>
-            <li>Adjust <strong>sensitivity</strong>, <strong>dead‑zones</strong>, and <strong>response curves</strong></li>
-            <li><strong>Writes to device NVM</strong> — settings travel with your VectorBridge</li>
+            <li>Adjust <strong>sensitivity</strong>, <strong>dead-zones</strong>, and <strong>response curves</strong></li>
+            <li><strong>Writes to VectorBridge’s onboard storage</strong> — settings travel with your VectorBridge</li>
             <li><strong>Starter profiles</strong> let you begin quickly; refine with sliders</li>
             <li>Windows <strong>10/11</strong></li>
           </ul>
-          <div class="mt-6 p-4 rounded-xl bg-white border border-slate-200 sb text-sm text-slate-700">
-            <div class="font-semibold mb-1">Screenshot guidance</div>
-            <ol class="list-decimal list-inside space-y-1">
-              <li><strong>tuner_device_selection.png</strong> — single window, dropdown visible with <em>SpaceOrb 360</em> selected; keep other UI minimal.</li>
-              <li><strong>tuner_sliders.png</strong> — show sliders for sensitivity/dead‑zone/curves (no device dropdown needed).</li>
-              <li><strong>tuner_write_to_device.png</strong> — show the control/status for writing to NVM.</li>
-              <li><strong>tuner_starter_profiles.png</strong> — show the starter profiles list.</li>
-            </ol>
-          </div>
         </div>
       </div>
     </section>
+    
 
     <!-- Feeder panel -->
+    
     <section id="panelFeeder" class="py-8 hidden">
       <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-5 gap-8 items-start">
         <div class="md:col-span-3">
           <div class="rounded-2xl border border-slate-200 bg-white sb overflow-hidden">
-            <div class="px-4 py-3 border-b border-slate-200 bg-slate-50 text-sm font-medium">Mouse&Keyboard Feeder — Launch and Play</div>
-            <!-- HERO screenshot placeholder -->
-            <img src="feeder_main.png" alt="Feeder mapping axes/buttons to keys and mouse functions" class="w-full h-auto" />
+            <div id="panelFeederHeader" class="px-4 py-3 border-b border-slate-200 bg-slate-50 text-sm font-medium">Mouse&Keyboard Feeder — Mappings overview</div>
+            <img id="panelFeederHero" src="feeder_main.png" alt="Feeder main window showing mappings overview" class="w-full h-auto" />
           </div>
-          <div class="mt-4 grid md:grid-cols-3 gap-4">
-            <figure class="rounded-xl border border-slate-200 bg-white sb overflow-hidden">
-              <img src="feeder_mapping.png" alt="Mapping UI showing axes/buttons mapped to keys/mouse" class="w-full h-auto" />
-              <figcaption class="px-3 py-2 text-xs text-slate-600">Map any axis/button to any key or mouse function</figcaption>
-            </figure>
-            <figure class="rounded-xl border border-slate-200 bg-white sb overflow-hidden">
-              <img src="feeder_profiles.png" alt="Profile save/load/import/export" class="w-full h-auto" />
-              <figcaption class="px-3 py-2 text-xs text-slate-600">Save, load, <strong>import/export</strong> — share configs</figcaption>
-            </figure>
-            <figure class="rounded-xl border border-slate-200 bg-white sb overflow-hidden">
-              <img src="feeder_mouselook.png" alt="Mouse look tuning for FPS" class="w-full h-auto" />
-              <figcaption class="px-3 py-2 text-xs text-slate-600">Optimized <strong>mouse look</strong> for FPS games</figcaption>
-            </figure>
+          <div class="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4" role="list">
+            
+            <button class="group rounded-xl overflow-hidden border border-slate-200 bg-white sb focus:outline-none focus:ring-2 focus:ring-slate-400"
+                    data-gallery="panelFeeder" data-src="feeder_main.png" data-title="Mappings overview" data-alt="Feeder main window showing mappings overview" aria-pressed="true" tabindex="0">
+              <img src="feeder_main.png" alt="Feeder main window showing mappings overview" class="w-full h-auto pointer-events-none" />
+              <div class="px-3 py-2 text-xs text-slate-600 text-left">Mappings overview</div>
+            </button>
+        
+
+            <button class="group rounded-xl overflow-hidden border border-slate-200 bg-white sb focus:outline-none focus:ring-2 focus:ring-slate-400"
+                    data-gallery="panelFeeder" data-src="feeder_mapping.png" data-title="Axis/button → key/mouse" data-alt="Feeder mapping UI for axis/button to key/mouse" aria-pressed="false" tabindex="0">
+              <img src="feeder_mapping.png" alt="Feeder mapping UI for axis/button to key/mouse" class="w-full h-auto pointer-events-none" />
+              <div class="px-3 py-2 text-xs text-slate-600 text-left">Axis/button → key/mouse</div>
+            </button>
+        
+
+            <button class="group rounded-xl overflow-hidden border border-slate-200 bg-white sb focus:outline-none focus:ring-2 focus:ring-slate-400"
+                    data-gallery="panelFeeder" data-src="feeder_profiles.png" data-title="Save / Load / Import / Export" data-alt="Feeder profiles save, load, import, export" aria-pressed="false" tabindex="0">
+              <img src="feeder_profiles.png" alt="Feeder profiles save, load, import, export" class="w-full h-auto pointer-events-none" />
+              <div class="px-3 py-2 text-xs text-slate-600 text-left">Save / Load / Import / Export</div>
+            </button>
+        
+
+            <button class="group rounded-xl overflow-hidden border border-slate-200 bg-white sb focus:outline-none focus:ring-2 focus:ring-slate-400"
+                    data-gallery="panelFeeder" data-src="feeder_mouselook.png" data-title="Optimized mouse look" data-alt="Feeder mouse look tuning for FPS games" aria-pressed="false" tabindex="0">
+              <img src="feeder_mouselook.png" alt="Feeder mouse look tuning for FPS games" class="w-full h-auto pointer-events-none" />
+              <div class="px-3 py-2 text-xs text-slate-600 text-left">Optimized mouse look</div>
+            </button>
+        
           </div>
         </div>
         <div class="md:col-span-2">
           <h2 class="text-2xl font-bold">Feeder highlights</h2>
           <ul class="mt-3 space-y-2 text-slate-700">
+            
             <li><strong>Play virtually any FPS</strong> — maps to standard mouse/keyboard conventions</li>
             <li>Map axes and buttons to <strong>any key or mouse function</strong></li>
             <li><strong>Save / Load / Import / Export</strong> profiles; easy sharing</li>
             <li>Windows <strong>10/11</strong></li>
           </ul>
-          <div class="mt-6 p-4 rounded-xl bg-white border border-slate-200 sb text-sm text-slate-700">
-            <div class="font-semibold mb-1">Screenshot guidance</div>
-            <ol class="list-decimal list-inside space-y-1">
-              <li><strong>feeder_main.png</strong> — main window showing mappings overview.</li>
-              <li><strong>feeder_mapping.png</strong> — detailed mapping editor (axis/button → key/mouse).</li>
-              <li><strong>feeder_profiles.png</strong> — profiles area demonstrating import/export.</li>
-              <li><strong>feeder_mouselook.png</strong> — show mouse‑look related settings for FPS.</li>
-            </ol>
-          </div>
         </div>
       </div>
     </section>
+    
 
     <!-- CTA -->
     <section class="py-10">
@@ -186,5 +199,37 @@
     tabTuner.addEventListener('click',()=>show('tuner'));
     tabFeeder.addEventListener('click',()=>show('feeder'));
   </script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  function setupGallery(panelId){
+    const header = document.getElementById(panelId + 'Header');
+    const hero = document.getElementById(panelId + 'Hero');
+    const thumbs = document.querySelectorAll('[data-gallery="' + panelId + '"]');
+    function baseTitle(){
+      return panelId === 'panelTuner' ? 'Tuner' : 'Mouse&Keyboard Feeder';
+    }
+    function select(btn){
+      thumbs.forEach(t => t.setAttribute('aria-pressed', 'false'));
+      btn.setAttribute('aria-pressed', 'true');
+      const src = btn.getAttribute('data-src');
+      const title = btn.getAttribute('data-title') || '';
+      const alt = btn.getAttribute('data-alt') || '';
+      hero.src = src;
+      hero.alt = alt;
+      if(header) header.textContent = baseTitle() + ' — ' + title;
+    }
+    thumbs.forEach(btn => {
+      btn.addEventListener('click', () => select(btn));
+      btn.addEventListener('keydown', (e) => {
+        if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); select(btn); }
+      });
+    });
+  }
+  setupGallery('panelTuner');
+  setupGallery('panelFeeder');
+});
+</script>
+
 </body>
 </html>
