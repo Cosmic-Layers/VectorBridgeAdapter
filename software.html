@@ -32,7 +32,29 @@
 		<a href="about.html" class="hover:opacity-80">About</a>
         <a class="inline-flex items-center px-3 py-1.5 rounded-xl text-white hover:opacity-90" style="background:var(--vb-space)" href="https://www.etsy.com/shop/CosmicLayersStore" target="_blank" rel="noopener">Get VectorBridge</a>
       </nav>
-
+      <!-- Mobile hamburger -->
+      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center p-2 rounded-lg border border-slate-300"
+              aria-controls="mobileNav" aria-expanded="false" aria-label="Open menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobileNav" class="md:hidden hidden border-t border-slate-200 bg-white">
+      <div class="max-w-6xl mx-auto px-4 py-3 grid gap-3 text-sm">
+        <a href="index.html#features" class="py-1 hover:opacity-80">Features</a>
+        <a href="index.html#devices" class="py-1 hover:opacity-80">Devices</a>
+        <a href="index.html#videos" class="py-1 hover:opacity-80">Videos</a>
+        <a href="index.html#faq" class="py-1 hover:opacity-80">FAQ</a>
+        <a href="software.html" class="py-1 hover:opacity-80">Software</a>
+        <a href="about.html" class="py-1 hover:opacity-80">About</a>
+        <a class="inline-flex items-center justify-center px-3 py-2 rounded-xl text-white"
+           style="background:var(--vb-space)" href="https://www.etsy.com/shop/CosmicLayersStore"
+           target="_blank" rel="noopener">Get VectorBridge</a>
+      </div>
     </div>
   </header>
 
@@ -230,6 +252,28 @@ document.addEventListener('DOMContentLoaded', function(){
   setupGallery('panelTuner');
   setupGallery('panelFeeder');
 });
+</script>
+
+
+<script>
+  (function () {
+    var btn = document.getElementById('menuBtn');
+    var menu = document.getElementById('mobileNav');
+    if (!btn || !menu) return;
+    btn.addEventListener('click', function(){
+      var isHidden = menu.classList.contains('hidden');
+      menu.classList.toggle('hidden');
+      btn.setAttribute('aria-expanded', String(isHidden));
+    });
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        if (!menu.classList.contains('hidden')) {
+          menu.classList.add('hidden');
+          btn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+  })();
 </script>
 
 </body>
