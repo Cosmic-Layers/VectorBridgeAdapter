@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://vectorbridgeadapter.pages.dev/sitemap.xml
+
+Sitemap: https://vectorbridge.net/sitemap.xml

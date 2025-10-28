@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://vectorbridgeadapter.pages.dev/</loc></url>
-  <url><loc>https://vectorbridgeadapter.pages.dev/software.html</loc></url>
-  <url><loc>https://vectorbridgeadapter.pages.dev/about.html</loc></url>
+  <url>
+    <loc>https://vectorbridge.net/</loc>
+    <lastmod>2025-10-28</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://vectorbridge.net/about</loc>
+    <lastmod>2025-10-28</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vectorbridge.net/software</loc>
+    <lastmod>2025-10-28</lastmod>
+    <priority>0.8</priority>
+  </url>
 </urlset>
